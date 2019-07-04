@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+  
+</head>
+<body  style="background-color:#66FCF1;">
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" style="color: white" href="{{url_for('index')}}">::: RESTful API :::</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="{{url_for('create')}}">CREATE</a></li>
+      <li><a href="{{url_for('read')}}">READ</a></li>
+      <li><a href="{{url_for('update')}}">UPDATE</a></li>
+      <li><a href="{{url_for('delete')}}">DELETE</a></li>
+      <li><a href="{{url_for('get_product')}}">Raw Data</a></li>
+    </ul>
+  </div>
+  </nav>
+  <div class="container">
+        {% block body %}
+        {% endblock %}
+  </div>
+</body>
+</html>
